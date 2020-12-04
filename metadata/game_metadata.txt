@@ -1,0 +1,6 @@
+devid=erquint
+devtitle=Murad "Gness Erquint" Beybalaev
+gameid=saddlebuck
+gametitle=saddlebuck
+version=0.1
+icon=metadata/icon.png
