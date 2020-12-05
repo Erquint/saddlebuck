@@ -100,8 +100,10 @@ module Giatros
     
     def normal
       out = self.dup
-      out.xlite = out.x / @magnitude
-      out.y /= @magnitude
+      if @x + @y + @magnitude > 0
+        out.xlite /= @magnitude
+        out.y /= @magnitude
+      end
       return out
     end
     
@@ -116,6 +118,10 @@ module Giatros
     end
     
     private
+    
+    def xlite
+      self.x
+    end
     
     def xlite= arg
       @x = arg
@@ -151,7 +157,7 @@ def tick args
       g: 0,
       b: 0,
     })
-  
+    
     $state[:solids][:mainCharacter] = SolidBorder.new({
       fill: true,
       x: args.grid.w / 2,
